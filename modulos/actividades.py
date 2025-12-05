@@ -13,9 +13,8 @@ while True:
     if opcion == "1":
         mostrar_actividades()
     elif opcion == "2":
-        actividad = input("Nombre de la actividad: ")
-        socio_id = input("ID del socio: ")
-        inscribir_socio(actividad, socio_id)
+        
+        inscribir_socio
     elif opcion == "3":
         actividad = input("Nombre de la actividad: ")
         ver_inscritos(actividad)
@@ -31,7 +30,7 @@ def mostrar_actividades():
         disponibles = cupo - len(inscritos)
         print(f"- {actividad}: Cupo disponible: {disponibles}/{cupo}")
 
-def inscribir_socio(actividad, socio_id):
+def inscribir_socio():
     if actividad in actividades:
         cupo, inscritos = actividades[actividad]
         if len(inscritos) < cupo:

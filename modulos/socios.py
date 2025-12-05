@@ -80,5 +80,6 @@ def eliminar_socio():
             writer.writerows(socios_actualizados)
             print("Socio eliminado correctamente.")
     else:
-        print("Socio no encontrado ")            
+        print("Socio no encontrado ")   
+                 
 menu_clientes()

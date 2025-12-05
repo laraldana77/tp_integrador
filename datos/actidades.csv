@@ -1,0 +1,5 @@
+actividades = {
+    "Yoga": [10, []],  # Cupo máximo 10, lista vacía de inscritos
+    "Spinning": [15, []],
+    "Pilates": [8, []]
+}
