@@ -1,10 +1,60 @@
 import csv
 import os
 ARCHIVO_ACTIVIDADES="datos/actividades.csv"
+def menu_actividades():
+   while True:
+      print("\n---Menu de Actividades---")
+      print("1. cargar actividades")
+      print("2. Listar actividades")
+      print("3. Inscripcion socios")
+      print("4. Volver")
 
-def listar_actividades():
-    
-    with open(ARCHIVO_ACTIVIDADES, "r") as archivo:
-     reader=csv.reader(archivo)
-     for fila in reader:
-      print(f"Actividad: {fila[0]}- Horarios:{fila[1]}- Monto mensual:{fila[2]}")
+      opcion = input("Seleccione opción: ")
+
+      if opcion == "1":
+        cargar_actividades()
+      elif opcion == "2":
+         mostrar_actividades()
+      elif opcion=="3":
+          inscribir_socio()
+      elif opcion=="4":
+            break
+      else:
+            print("Opcion inválida.")
+
+
+def cargar_actividades(archivo="actividades.csv"):
+    actividades = []
+    if os.path.exists(archivo):
+        with open(archivo, newline="", encoding="utf-8") as f:
+            lector = csv.DictReader(f)
+            for fila in lector:
+                actividades.append(fila)
+    return actividades
+
+
+def mostrar_actividades(actividades):
+    print("\n=== ACTIVIDADES DISPONIBLES ===")
+    for act in actividades:
+        print(f"- {act['actividad']} | Horario: {act['horario']} | Costo: ${act['costo']}")
+    print()
+
+
+def inscribir_socio(socio, actividad, archivo="inscripciones.csv"):
+    existe = os.path.exists(archivo)
+
+    with open(archivo, "a", newline="", encoding="utf-8") as f:
+        campos = ["socio", "actividad"]
+        escritor = csv.DictWriter(f, fieldnames=campos)
+
+        if not existe:
+            escritor.writeheader()
+
+        escritor.writerow({
+            "socio": socio,
+            "actividad": actividad
+        })
+
+    print(f"\n✔ El socio '{socio}' fue inscripto a '{actividad}'.\n")
+
+menu_actividades()
