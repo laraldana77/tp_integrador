@@ -9,7 +9,8 @@ def menu_clientes():
         print("1. Registrar socio")
         print("2. Buscar socio")
         print("3. Listar socios")
-        print("4. Volver")
+        print("4. Eliminar socio")
+        print("5. Volver")
 
         opcion= input("Seleccione una opcion: ")
 
@@ -20,6 +21,8 @@ def menu_clientes():
         elif opcion=="3":
             listar_socios()
         elif opcion=="4":
+            eliminar_socio()
+        elif opcion=="5":
             break
         else:
             print("Opcion inválida.")
@@ -58,4 +61,24 @@ def listar_socios():
      for fila in reader:
       print(f"Nombre: {fila[0]}- Edad:{fila[1]}- Teléfono:{fila[2]}, DNI:{fila[3]}")
 
+
+def eliminar_socio():
+    dni_eliminar=input("Ingrese el DNI del socio que desea eliminar: ")
+    socios_actualizados= []
+    encontrados= False
+    with open(ARCHIVO_SOCIOS, "r", newline="") as archivo:
+        reader= csv.reader(archivo)
+        for row in reader:
+            if row[3]==dni_eliminar:
+                encontrado= True
+            else:
+                socios_actualizados.append(row)
+
+    if encontrado:
+        with open(ARCHIVO_SOCIOS, "w",newline="") as archivo:
+            writer=csv.writer(archivo)
+            writer.writerows(socios_actualizados)
+            print("Socio eliminado correctamente.")
+    else:
+        print("Socio no encontrado ")            
 menu_clientes()
