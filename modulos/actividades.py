@@ -4,7 +4,7 @@ ARCHIVO_ACTIVIDADES="datos/actividades.csv"
 def menu_actividades():
    while True:
       print("\n---Menu de Actividades---")
-      print("1. cargar actividades")
+      print("1. Cargar actividades")
       print("2. Listar actividades")
       print("3. Inscripcion socios")
       print("4. Volver")
