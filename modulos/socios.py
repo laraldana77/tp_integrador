@@ -3,7 +3,7 @@ import os
 
 ARCHIVO_SOCIOS="datos/socios.csv"
 
-def menu_clientes():
+def menu_socios():
     while True:
         print("\n---Gestión de Socios---")
         print("1. Registrar socio")
@@ -37,7 +37,7 @@ def registrar_socio():
         writer=csv.writer(archivo)
         writer.writerow([nombre,edad,telefono,dni])
 
-        print("Cliente registrado correctamente.")
+        print("Socio registrado correctamente.")
 
 
 def buscar_socio():
@@ -82,4 +82,4 @@ def eliminar_socio():
     else:
         print("Socio no encontrado ")   
                  
-menu_clientes()
+menu_socios()
