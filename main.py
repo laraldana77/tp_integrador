@@ -1,15 +1,16 @@
 from modulos.socios import menu_socios
 from modulos.profesores import menu_profesores
 from modulos.pagos import menu_pagos
+from modulos.actividades import menu_actividades
 
 def menu_principal():
     while True:
         print("\n=== SISTEMA DE GESTIÓN DE GIMNASIO ===")
-        print("1. Gestión de Clientes")
-        print("2. Gestión de profesores")
-        #print("2. Gestión de Rutinas")
-        print("3. Gestión de Pagos")
-        print("4. Salir")
+        print("1. Clientes")
+        print("2. Profesores")
+        print("3.Actividades")
+        print("4. Pagos")
+        print("5. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -18,8 +19,10 @@ def menu_principal():
         elif opcion == "2":
             menu_profesores()
         elif opcion == "3":
+            menu_actividades()
+        elif opcion =="4":
             menu_pagos()
-        elif opcion == "4":
+        elif opcion == "5":
             print("Saliendo del sistema...")
             break
         else:
