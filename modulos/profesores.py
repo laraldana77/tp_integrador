@@ -82,5 +82,5 @@ def eliminar_profesor():
     else:
         print("Profesor no encontrado ")   
                  
-menu_profesores()
+
 

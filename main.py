@@ -8,7 +8,7 @@ def menu_principal():
         print("\n=== SISTEMA DE GESTIÓN DE GIMNASIO ===")
         print("1. Clientes")
         print("2. Profesores")
-        print("3.Actividades")
+        print("3. Actividades")
         print("4. Pagos")
         print("5. Salir")
 
@@ -30,5 +30,5 @@ def menu_principal():
 
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     menu_principal()

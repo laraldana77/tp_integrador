@@ -71,4 +71,3 @@ def buscar_pagos():
     if not encontrado:
         print("No hay pagos registrados para ese cliente.")
 
-menu_pagos()

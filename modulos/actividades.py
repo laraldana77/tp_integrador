@@ -23,6 +23,7 @@ def menu_actividades():
             print("Opcion inválida.")
 
 
+archivo="inscripciones.csv"
 def cargar_actividades(archivo="actividades.csv"):
     actividades = []
     if os.path.exists(archivo):
@@ -40,7 +41,7 @@ def mostrar_actividades(actividades):
     print()
 
 
-def inscribir_socio(socio, actividad, archivo="inscripciones.csv"):
+def inscribir_socio(socio, actividad):
     existe = os.path.exists(archivo)
 
     with open(archivo, "a", newline="", encoding="utf-8") as f:
@@ -57,4 +58,3 @@ def inscribir_socio(socio, actividad, archivo="inscripciones.csv"):
 
     print(f"\n✔ El socio '{socio}' fue inscripto a '{actividad}'.\n")
 
-menu_actividades()
