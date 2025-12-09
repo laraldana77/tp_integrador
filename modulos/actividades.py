@@ -14,9 +14,13 @@ def menu_actividades():
       if opcion == "1":
         cargar_actividades()
       elif opcion == "2":
-         mostrar_actividades()
+         actividades=cargar_actividades()
+         mostrar_actividades(actividades)
       elif opcion=="3":
-          inscribir_socio()
+          actividades = cargar_actividades()
+          socio = input("Nombre del socio: ")
+          actividad = input("Actividad a inscribir: ")
+          inscribir_socio(socio, actividad)
       elif opcion=="4":
             break
       else:
