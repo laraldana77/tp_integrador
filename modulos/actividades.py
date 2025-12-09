@@ -39,10 +39,16 @@ def cargar_actividades(archivo="actividades.csv"):
 
 
 def mostrar_actividades(actividades):
-    print("\n=== ACTIVIDADES DISPONIBLES ===")
-    for act in actividades:
-        print(f"- {act['Actividades']} | Horario: {act['Horarios']} | Costo: ${act['Costo Mensual']}")
-    print()
+    with open("actividades.csv", "r", newline="", encoding="utf-8") as archivo:
+        lector = csv.reader(archivo)
+        encabezado = next(lector)  # opcional: salta la primera fila si es encabezado
+
+        print("=== ACTIVIDADES DISPONIBLES ===")
+        for fila in lector:
+            actividad = fila[0]
+            horario = fila[1]
+            costo = fila[2]
+            print(f"Actividad: {actividad} | Horario: {horario} | Costo: {costo}")
 
 
 def inscribir_socio(socio, actividad):
