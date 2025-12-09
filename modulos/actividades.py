@@ -15,7 +15,7 @@ def menu_actividades():
         cargar_actividades()
       elif opcion == "2":
          actividades=cargar_actividades()
-         mostrar_actividades(actividades)
+         mostrar_actividades()
       elif opcion=="3":
           actividades = cargar_actividades()
           socio = input("Nombre del socio: ")
@@ -38,11 +38,9 @@ def cargar_actividades(archivo="actividades.csv"):
     return actividades
 
 
-def mostrar_actividades(actividades):
-    with open("ARCHIVO_ACTIVIDADES", "r", newline="", encoding="utf-8") as archivo:
+def mostrar_actividades():
+    with open("ARCHIVO_ACTIVIDADES", "r") as archivo:
         lector = csv.reader(archivo)
-        encabezado = next(lector)  
-
         print("=== ACTIVIDADES DISPONIBLES ===")
         for fila in lector:
             actividad = fila[0]
