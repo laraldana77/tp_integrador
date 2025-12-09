@@ -41,7 +41,7 @@ def cargar_actividades(archivo="actividades.csv"):
 def mostrar_actividades(actividades):
     print("\n=== ACTIVIDADES DISPONIBLES ===")
     for act in actividades:
-        print(f"- {act['actividad']} | Horario: {act['horario']} | Costo: ${act['costo']}")
+        print(f"- {act['Actividades']} | Horario: {act['Horarios']} | Costo: ${act['Costo Mensual']}")
     print()
 
 
