@@ -39,9 +39,9 @@ def cargar_actividades(archivo="actividades.csv"):
 
 
 def mostrar_actividades(actividades):
-    with open("actividades.csv", "r", newline="", encoding="utf-8") as archivo:
+    with open("ARCHIVO_ACTIVIDADES", "r", newline="", encoding="utf-8") as archivo:
         lector = csv.reader(archivo)
-        encabezado = next(lector)  # opcional: salta la primera fila si es encabezado
+        encabezado = next(lector)  
 
         print("=== ACTIVIDADES DISPONIBLES ===")
         for fila in lector:
