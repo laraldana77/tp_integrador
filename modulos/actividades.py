@@ -14,7 +14,6 @@ def menu_actividades():
       if opcion == "1":
         cargar_actividades()
       elif opcion == "2":
-         actividades=cargar_actividades()
          mostrar_actividades()
       elif opcion=="3":
           actividades = cargar_actividades()
