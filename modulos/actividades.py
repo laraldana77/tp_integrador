@@ -34,7 +34,7 @@ def listar_actividades():
      
     with open(ARCHIVO_ACTIVIDADES, "r") as archivo:
         reader=csv.reader(archivo) 
-
+        
         print("\n=== ACTIVIDADES DISPONIBLES ===")
         for fila in reader:
             print(f"Actividad:{fila[0]}| Horario: {fila[1]} | Costo: {fila[2]}")
