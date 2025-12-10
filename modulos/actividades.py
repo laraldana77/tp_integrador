@@ -67,3 +67,4 @@ def inscribir_socio(socio, actividad):
 
     print(f"\n✔ El socio '{socio}' fue inscripto a '{actividad}'.\n")
 
+menu_actividades()
