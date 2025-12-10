@@ -6,42 +6,34 @@ ARCHIVO_ACTIVIDADES = "datos/actividades.csv"
 def menu_actividades():
     while True:
         print("\n--- Menu de Actividades ---")
-        print("1. Cargar actividades")
-        print("2. Listar actividades")
-        print("3. Inscripción socios")
-        print("4. Volver")
+        print("1. Listar actividades")
+        print("2. Inscripción socios")
+        print("3. Volver")
 
         opcion = input("Seleccione opción: ")
 
         if opcion == "1":
-            cargar_actividades()
+           listar_actividades()
+       
         elif opcion == "2":
-            mostrar_actividades()
-        elif opcion == "3":
-            actividades = cargar_actividades()
             socio = input("Nombre del socio: ")
             actividad = input("Actividad a inscribir: ")
             inscribir_socio(socio, actividad)
-        elif opcion == "4":
+        elif opcion == "3":
             break
         else:
             print("Opción inválida.")
 
 
-def cargar_actividades(archivo=ARCHIVO_ACTIVIDADES):
-    actividades = []
-    if os.path.exists(archivo):
-        with open(archivo, newline="", encoding="utf-8") as f:
-            lector = csv.DictReader(f)
-            for fila in lector:
-                actividades.append(fila)
-    return actividades
 
 
-
-def mostrar_actividades():
+def listar_actividades():
+    if not os.path.exists(ARCHIVO_ACTIVIDADES):
+        print("No hay actividades registradas aún.")
+        return
+     
     with open(ARCHIVO_ACTIVIDADES, "r") as archivo:
-        reader=csv.reader(archivo)
+        reader=csv.reader(archivo) 
 
         print("\n=== ACTIVIDADES DISPONIBLES ===")
         for fila in reader:
