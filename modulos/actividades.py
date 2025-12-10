@@ -38,16 +38,14 @@ def cargar_actividades(archivo=ARCHIVO_ACTIVIDADES):
     return actividades
 
 
+
 def mostrar_actividades():
-    with open(ARCHIVO_ACTIVIDADES, "r", newline="", encoding="utf-8") as archivo:
-        lector = csv.reader(archivo)
+    with open(ARCHIVO_ACTIVIDADES, "r") as archivo:
+        reader=csv.reader(archivo)
 
         print("\n=== ACTIVIDADES DISPONIBLES ===")
-        for fila in lector:
-            actividad = fila[0]
-            horario = fila[1]
-            costo = fila[2]
-            print(f"Actividad: {actividad} | Horario: {horario} | Costo: {costo}")
+        for fila in reader:
+            print(f"Actividad:{fila[0]}| Horario: {fila[1]} | Costo: {fila[2]}")
 
 
 archivo_inscripciones = "inscripciones.csv"
