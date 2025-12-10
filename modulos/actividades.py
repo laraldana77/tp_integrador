@@ -42,8 +42,6 @@ def mostrar_actividades():
     with open(ARCHIVO_ACTIVIDADES, "r", newline="", encoding="utf-8") as archivo:
         lector = csv.reader(archivo)
 
-        next(lector)  # Salta el encabezado
-
         print("\n=== ACTIVIDADES DISPONIBLES ===")
         for fila in lector:
             actividad = fila[0]
