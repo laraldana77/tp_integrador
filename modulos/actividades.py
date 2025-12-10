@@ -32,12 +32,15 @@ def listar_actividades():
         print("No hay actividades registradas aún.")
         return
      
-    with open(ARCHIVO_ACTIVIDADES, "r") as archivo:
-        reader=csv.reader(archivo) 
-        
+    with open(ARCHIVO_ACTIVIDADES, "r", encoding="utf-8") as archivo:
+        reader = csv.reader(archivo)
+
         print("\n=== ACTIVIDADES DISPONIBLES ===")
+
+        next(reader, None)  # <-- SALTA EL ENCABEZADO
+
         for fila in reader:
-            print(f"Actividad:{fila[0]}| Horario: {fila[1]} | Costo: {fila[2]}")
+            print(f"Actividad: {fila[0]} | Horario: {fila[1]} | Costo: {fila[2]}")
 
 
 archivo_inscripciones = "inscripciones.csv"
